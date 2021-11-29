@@ -29,6 +29,7 @@
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
+            <version>1.18.22</version>
             <scope>provided</scope>
         </dependency>
 
@@ -69,16 +70,16 @@
             <artifactId>spring-boot-devtools</artifactId>
             <scope>runtime</scope>
         </dependency>
-        
+
          <dependency>
 		    <groupId>javax.validation</groupId>
 		    <artifactId>validation-api</artifactId>
 		</dependency>
-		
-		<dependency>
-			  <groupId>org.springframework.boot</groupId>
-			  <artifactId>spring-boot-starter-security</artifactId>
-		</dependency>
+
+<!--		<dependency>-->
+<!--			  <groupId>org.springframework.boot</groupId>-->
+<!--			  <artifactId>spring-boot-starter-security</artifactId>-->
+<!--		</dependency>-->
 
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -91,15 +92,17 @@
 				</exclusion>
 			</exclusions>
 		</dependency>
-        
-        
-	</dependencies>
+
+
+
+    </dependencies>
 
 	<build>
 		<plugins>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
+                <version>${project.parent.version}</version>
 			</plugin>
 		</plugins>
 	</build>

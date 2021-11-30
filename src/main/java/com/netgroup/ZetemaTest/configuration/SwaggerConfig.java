@@ -26,6 +26,7 @@ public class SwaggerConfig
     public Docket getDocketInstance() {
         return new Docket(DocumentationType.SWAGGER_2).select()
                 .apis(RequestHandlerSelectors.basePackage("com.netgroup.ZetemaTest.rest"))
+
                 .paths(PathSelectors.regex("/api/.*")).build().apiInfo(apiInfo());
     }
 

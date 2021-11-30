@@ -1,4 +1,4 @@
-package com.netgroup.ZetemaTest.RestController;
+package com.netgroup.ZetemaTest.rest;
 
 import java.util.List;
 

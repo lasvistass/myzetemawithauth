@@ -5,6 +5,8 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.netgroup.ZetemaTest.converter.StoreConverter;
+import com.netgroup.ZetemaTest.data.dto.StoreDTO;
 import com.netgroup.ZetemaTest.data.entity.Store;
 import com.netgroup.ZetemaTest.repository.StoreRepository;
 
@@ -17,14 +19,13 @@ public class StoreImpl implements StoreService{
 	
 
 	@Override
-	public List<Store> elenco() {
-
-		return storeRepo.findAll();
+	public List<StoreDTO> elenco() {
+		return StoreConverter.converterListFromDaoToDto(storeRepo.findAll());
 	}
 
 	@Override
-	public Store findStore(Integer id) {
-		return storeRepo.findById(id).get();
+	public StoreDTO findStore(Integer id) {
+		return StoreConverter.converterFromDaoToDto(storeRepo.findById(id).get());
 	}
 
 	@Override
@@ -37,7 +38,9 @@ public class StoreImpl implements StoreService{
 	@Override
 	public void deleteStore(Integer id) {
 		storeRepo.deleteById(id);
-		
 	}
+
+
+	
 
 }

@@ -40,7 +40,7 @@ public class StoreRest {
 		log.info("store creato");
 	}
 
-	@ApiOperation(value = "eliminazione dello store", notes = "endpoint predisposto eliminazione dal db", response = Store.class, produces = "application/json")
+	@ApiOperation(value = "eliminazione dello store", notes = "endpoint predisposto eliminazione dal db", response = StoreDTO.class, produces = "application/json")
 	@ApiResponses(value = { @ApiResponse(code = 200, message = "Store eliminato") })
 	@DeleteMapping(value = "/{id}")
 	public void deleteStore(@PathVariable("id") Integer id) {
@@ -49,7 +49,7 @@ public class StoreRest {
 		log.info("store è stato eliminato!");
 	}
 
-	@ApiOperation(value = "get lista Store", notes = "endpoint predisposto a ricercare la lista store", response = Store.class, produces = "application/json")
+	@ApiOperation(value = "get lista Store", notes = "endpoint predisposto a ricercare la lista store", response = StoreDTO.class, produces = "application/json")
 	@ApiResponses(value = { @ApiResponse(code = 200, message = "elenco Store") })
 	@GetMapping
 	public List<StoreDTO> getStores() {
@@ -57,7 +57,7 @@ public class StoreRest {
 		return storeService.elenco();
 	}
 
-	@ApiOperation(value = "get Store da id", notes = "endpoint predisposto a ricercare e tornare un Store", response = Store.class, produces = "application/json")
+	@ApiOperation(value = "get Store da id", notes = "endpoint predisposto a ricercare e tornare un Store", response = StoreDTO.class, produces = "application/json")
 	@ApiResponses(value = { @ApiResponse(code = 200, message = "Store trovato") })
 	@GetMapping(value = "/{id}")
 	public StoreDTO getStore(@PathVariable("id") Integer id) {

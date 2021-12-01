@@ -15,5 +15,6 @@ public interface MiccardService {
     void salva(Miccard oMiccard);
 
     void deleteMiccard(Integer id);
-
+    
+    	
 }

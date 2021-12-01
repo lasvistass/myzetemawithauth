@@ -2,6 +2,7 @@ package com.netgroup.ZetemaTest.rest;
 
 import com.netgroup.ZetemaTest.data.dto.GiftcardDTO;
 import com.netgroup.ZetemaTest.data.entity.Giftcard;
+import com.netgroup.ZetemaTest.repository.GiftcardRepository;
 import com.netgroup.ZetemaTest.service.GiftcardService;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiResponse;
@@ -51,6 +52,9 @@ public class RestGiftcardController {
         Giftcardser.deleteGiftcard(id);
     }
 
-
+    @PutMapping(value="/updategiftcard")
+    public void modificaGiftcard(@RequestBody Giftcard oGiftcard) {
+        Giftcardser.salva(oGiftcard);
+    }
 
 }

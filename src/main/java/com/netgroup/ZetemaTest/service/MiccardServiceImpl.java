@@ -7,6 +7,7 @@ import com.netgroup.ZetemaTest.repository.MiccardRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 @Service
@@ -17,6 +18,7 @@ public class MiccardServiceImpl implements MiccardService {
 
     @Override
     public List<MiccardDTO> elenco() {
+    	 MiccardRepository.uptedExpired(new Date());
         List<Miccard> Miccards = MiccardRepository.findAll();
         List<MiccardDTO> Miccardsdto = new ArrayList<>();
         for(Miccard oMiccard:Miccards){
@@ -27,6 +29,7 @@ public class MiccardServiceImpl implements MiccardService {
 
     @Override
     public MiccardDTO findMiccard(Integer id) {
+    	 MiccardRepository.uptedExpired(new Date());
         Miccard oMiccard = MiccardRepository.findById(id).get();
 
         MiccardDTO oMiccarddto = MiccardConverter.convertFromDaoToDto(oMiccard);
@@ -43,5 +46,12 @@ public class MiccardServiceImpl implements MiccardService {
     public void deleteMiccard(Integer id) {
         MiccardRepository.deleteById(id);
     }
-
+    
+//    public void setScadenza(Miccard miccard) {
+//    	if(miccard.getExpiredDate().after(new Date())){
+//    		miccard.setExpired(true);
+//    	}
+//    }
+    
+   
 }

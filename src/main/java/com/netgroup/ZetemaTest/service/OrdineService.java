@@ -15,4 +15,12 @@ public interface OrdineService {
 	
 	Ordine deleteOrdine(Integer id);
 	
+	void setExpiredMIccard(Integer id);
+	
+	OrdineDTO addGiftcard(Integer idOrdine, Integer idGiftCard);
+	
+	void addMiccard(Integer[] id);
+	
+	void addStore(Integer[] id);
+	
 }

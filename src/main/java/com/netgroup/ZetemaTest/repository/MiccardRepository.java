@@ -14,9 +14,7 @@ public interface MiccardRepository extends JpaRepository<Miccard, Integer> {
 	
 	@Modifying
 	@Transactional
-	@Query(value = "update miccard m set m.is_expired=true where m.expired_date<?1 ", nativeQuery = true )
-	void uptedExpired(Date date);
+	@Query(value = "update miccard m set m.is_expired=?1 where m.id = ?2", nativeQuery = true )
+	void updateExpired(boolean b, Integer id);
 	
-
-
 }

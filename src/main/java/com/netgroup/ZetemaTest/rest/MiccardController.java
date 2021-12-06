@@ -56,5 +56,10 @@ public class MiccardController {
     public void modificaMiccard(@RequestBody Miccard oMiccard) {
         Miccardser.salva(oMiccard);
     }
+    
+    @GetMapping(value="/expired/{id}")
+    public void miccardExiperd(@PathVariable("id") Integer id) {
+    	 Miccardser.setExpired(id);
+    }
 
 }

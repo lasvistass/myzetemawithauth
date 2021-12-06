@@ -26,8 +26,6 @@ public class OrdineDTO {
 
 	private PaymentType paymentType;
 	
-	private String campo1;
-	
 	private Utente utente;
 	
 	private Miccard micard;
@@ -75,14 +73,6 @@ public class OrdineDTO {
 
 	public void setPaymentType(PaymentType paymentType) {
 		this.paymentType = paymentType;
-	}
-
-	public String getCampo1() {
-		return campo1;
-	}
-
-	public void setCampo1(String campo1) {
-		this.campo1 = campo1;
 	}
 
 	public Utente getUtente() {

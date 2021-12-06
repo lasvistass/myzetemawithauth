@@ -18,7 +18,6 @@ public class OrdineConvert {
 		dto.setCode(ordine.getCode());
 		dto.setPaymentType(ordine.getPaymentType());
 		dto.setPrezzo(ordine.getPrezzo());
-		dto.setCampo1(ordine.getCampo1());
 		dto.setUtente(ordine.getUtente());
 		dto.setMicard(ordine.getMicard());
 		dto.setGiftcard(ordine.getGiftcard());

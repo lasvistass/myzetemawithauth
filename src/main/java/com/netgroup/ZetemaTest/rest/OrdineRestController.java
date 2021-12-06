@@ -62,4 +62,25 @@ public class OrdineRestController {
 	public Ordine deleteOrdine(@PathVariable("id") Integer id) {
 		return ordineService.deleteOrdine(id);
 	}
+	
+	@GetMapping(value="/expired/{id}")
+	public void setExpired(@PathVariable("id") Integer id) {
+		ordineService.setExpiredMIccard(id);
+	}
+	
+	@GetMapping(value="/addgift/{idOrdine}/{idGiftcard}")
+	public OrdineDTO addGiftToOrdine(@PathVariable("idOrdine") Integer idOrdine, @PathVariable("idGiftcard") Integer idGriftcard) {
+		
+		return ordineService.addGiftcard(idOrdine, idGriftcard);
+	}
+	
+	@PostMapping(value="/addmiccard")
+	public void addMiccardoOrdine(@RequestBody Integer[] id) {
+		 ordineService.addMiccard(id);
+	}
+	
+	@PostMapping(value="/addstore")
+	public void addStore(@RequestBody Integer[] id) {
+		ordineService.addStore(id);
+	}
 }

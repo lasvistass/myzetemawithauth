@@ -38,9 +38,6 @@ public class Ordine {
 	@Column(name ="PaymentType")
 	private PaymentType paymentType;
 	
-	@Column(name ="Campo1")
-	private String campo1;
-	
 	@ManyToOne
 	@JoinColumn(name="idUtente")
 	private Utente utente;
@@ -105,13 +102,6 @@ public class Ordine {
 		this.paymentType = paymentType;
 	}
 
-	public String getCampo1() {
-		return campo1;
-	}
-
-	public void setCampo1(String campo1) {
-		this.campo1 = campo1;
-	}
 
 	public Utente getUtente() {
 		return utente;

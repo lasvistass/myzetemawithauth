@@ -16,5 +16,9 @@ public interface MiccardService {
 
     void deleteMiccard(Integer id);
     
+    boolean checkDate(Miccard miccard);
+    
+    void setExpired(Integer id);
+    
     	
 }

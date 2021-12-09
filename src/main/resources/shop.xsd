@@ -1,0 +1,35 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://spring.io/guides/gs-producing-web-service"
+           targetNamespace="http://spring.io/guides/gs-producing-web-service" elementFormDefault="qualified">
+
+    <xs:element name="getShopRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="name" type="xs:string"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="getShopResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="shop" type="tns:shop"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:complexType name="shop">
+        <xs:sequence>
+            <xs:element name="name" type="xs:string"/>
+            <xs:element name="serial" type="xs:int"/>
+            <xs:element name="position" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+
+<!--     <xs:simpleType name="currency"> -->
+<!--         <xs:restriction base="xs:string"> -->
+<!--             <xs:enumeration value="GBP"/> -->
+<!--             <xs:enumeration value="EUR"/> -->
+<!--             <xs:enumeration value="PLN"/> -->
+<!--         </xs:restriction> -->
+<!--     </xs:simpleType> -->
+</xs:schema>
